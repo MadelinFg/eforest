@@ -1,0 +1,95 @@
+<div id="footer-container">
+{{#if subscriptionFooter.active}}
+  {{> legend/views/partials/suscription}}
+{{/if}}
+<footer class="legend-footer-contact-container header--custom-background">
+  <div class="legend-footer-contact">
+    <div class="nav-bounds nav-bounds--contact">
+      {{#if showSocialMedia}}
+      <div>
+        <div class="legend-footer__social-media">
+          {{#each socialNetworks}}
+          <a href="{{url}}" target="_blank" class="header--custom-svg header--svg" rel="noopener noreferrer nofollow">
+            {{> (concat 'legend/views/partials/icons/' (lookup . 'name'))}}
+          </a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+      <div class="legend-footer__contact-col legend-list--spacing">
+        {{#if showContact}}
+        <ul class="legend-footer__contact header--custom-border"></ul>
+        {{#if showPhone}}
+        <li>
+          <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
+            <span>{{phone.formatted}}</span>
+          </a>
+        </li>
+        {{/if}}
+        <li>
+          <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">
+            <span>{{email}}</span>
+          </a>
+        </li>
+        
+        <li class="legend-list--spacing">
+          <a class="legend-list--contact header--custom-text" href="{{contact.href}}" class="contact-button" rel="nofollow">
+            {{> legend/views/partials/contact}} <span>{{contact.label}}</span>
+          </a>
+        </li>
+        {{/if}}
+        <meta itemprop="contactType" content="customer service" />
+        </ul>
+      </div>
+    </div>
+
+    <ul id="nosotros">
+      <li><a href="">Quiénes somos</a></li>
+      <li><a target="_parent" href="https://www.mercadolibre.cl/ayuda/terminos-y-condiciones-uso-del-sitio_2090">Términos y condiciones</a></li>
+      <li><a href="/p/privacidad">Políticas de privacidad</a></li>
+    </ul>
+
+    <div id="formas-pago">
+      <h4>FORMAS DE PAGO</h4>
+      <ul>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+        <li><img src="" alt="Formas de pago"></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="legend-footer-info header--custom-background">
+  <div class="nav-footer__icons_generals">
+    <a href="{{{linkToMShopsLandingPage}}}" target="_blank" class="legend-footer-info__brand header--custom-text">
+      <span class="footer-power-by">{{i18n.powered_by}}</span>
+      {{> legend/views/partials/icons/mshops}}
+    </a>
+  </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  $(window).on('load', function () {
+    var homeslider = document.getElementsByClassName('slide__image');
+    var home = document.getElementsByClassName('home');
+
+    if ((homeslider.length > 0) && (home.length > 0)) {
+      $(".section-category").eq(0).addClass("descuentos");
+      $(".section-category").eq(1).addClass("categorias");
+      $(".section-category").eq(2).addClass("marcas");
+
+      //setTimeout(function () {
+        //if (window.screen.width > 900) {
+          //$("#categorias").insertBefore(".slider-principal");
+        //}
+      //}, 600);
+    }
+  });
+</script>
