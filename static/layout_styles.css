@@ -695,6 +695,7 @@ ul#nav-list li.nav-default-list__item a span {
 }
 
 body {
+    font-family: 'Montserrat', sans-serif !important;
     margin: 0
 }
 
@@ -1413,7 +1414,7 @@ main#root-app .ui-item.price-digits-7.items-per-row-5 .price-tag__disabled {
 }
 
 .legend-footer-contact-logo .legend-footer__social-media {
-    text-align: center
+    text-align: center;
 }
 
 .legend-footer-contact-logo .legend-footer__social-media a {
@@ -1569,11 +1570,13 @@ body.notHome .legend-footer-contact-logo .nav-header__image {
 }
 
 .legend-footer-contact-container .legend-footer-contact {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     max-width: unset;
     padding: 48px 76px;
-    position: relative
+    position: relative;
+    justify-items: center;
+    align-items: start;
 }
 
 .legend-footer-contact-container .nav-bounds--contact {
@@ -1666,7 +1669,8 @@ footer.legend-footer-info.header--custom-background {
 .legend-footer__social-media {
     align-items: center;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .legend-footer-contact-logo:after {
@@ -2798,7 +2802,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .nav-bounds--contact {
-        align-items: end;
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
         justify-content: end
@@ -2957,13 +2961,13 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container {
-        background: #C7C7B3;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        margin: 0 auto;
-        padding: 0px 48px 48px;
-        text-align: left
+        align-items: center;
+        margin: 0;
+        padding: 0px;
+        text-align: left;
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__information {
@@ -2981,7 +2985,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__description {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 20px;
         font-weight: 400;
         line-height: 24px;
@@ -2991,14 +2995,14 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__legal-text {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 12px;
         font-weight: 400;
         line-height: 15px
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__legal-text .template-suscription-container__legal-text-link {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-weight: 700;
         margin-top: 5px;
         text-decoration: underline
@@ -3017,7 +3021,8 @@ main#root-app ol.andes-breadcrumb {
         line-height: 18px;
         margin-bottom: 12px;
         padding-left: 12px;
-        width: 347px
+        width: 347px;
+        border-radius: 24px;
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__email:focus {
@@ -3089,23 +3094,18 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container-legend {
-        align-items: center;
-        background: #C7C7B3;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        padding: 0 48px 0 48px;
-        text-align: left
+        margin: 0;
+        padding: 0;
     }
 
     .template-suscription-main-container .template-suscription-container-title-legend {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 24px;
         font-weight: 600;
         letter-spacing: 0.1em;
         line-height: 32px;
-        margin: 40px 0 12px 0;
+        margin-bottom: 1rem;
         max-width: 490px
     }
 
@@ -3435,7 +3435,8 @@ main#root-app ol.andes-breadcrumb {
     .legend-footer__social-media {
         align-items: center;
         display: flex;
-        justify-content: space-around
+        justify-content: space-around;
+        margin-top: 1rem;
     }
 
     .legend-footer-contact-container .legend-footer-contact {
@@ -3525,7 +3526,6 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container {
-        background: #C7C7B3;
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -3538,7 +3538,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__title {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 20px;
         font-weight: 600;
         letter-spacing: 0.1em;
@@ -3548,7 +3548,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__description {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 16px;
         font-weight: 400;
         line-height: 19px;
@@ -3556,7 +3556,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__legal-text {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 12px;
         font-weight: 400;
         line-height: 15px;
@@ -3564,7 +3564,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__legal-text .template-suscription-container__legal-text-link {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-weight: 700;
         text-decoration: underline
     }
@@ -3653,7 +3653,6 @@ main#root-app ol.andes-breadcrumb {
 
     .template-suscription-main-container .template-suscription-container-legend {
         align-items: center;
-        background: #C7C7B3;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -3663,7 +3662,7 @@ main#root-app ol.andes-breadcrumb {
     }
 
     .template-suscription-main-container .template-suscription-container-title-legend {
-        color: rgba(0, 0, 0, 0.9);
+        color: var(--white) !important;
         font-size: 25px;
         font-weight: 600;
         letter-spacing: 0.1em;
@@ -3704,9 +3703,66 @@ main#root-app ol.andes-breadcrumb {
     }
 }
 
+/* ESTILOS PROPIOS */
+.max-w-1300 {
+    max-width: 1300px !important;
+    margin: auto !important;
+}
+*, .shops--secondary-font {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+
+/* NOSOTROS */
+#nosotros a {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+}
+#nosotros ul {
+    padding: 0;
+}
+/* / NOSOTROS */
+
+#nosotros h4, #formas-pago h4, .nav-bounds--contact h4 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* FORMAS DE PAGO */
+#formas-pago ul {
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+}
+#formas-pago ul li {
+    list-style: none;
+}
+/* / FORMAS DE PAGO */
 
 
 /* CAMBIOS A PLANTILLA */
+
+/* BANNER DESCUENTOS */
+.hub__boxed-width.descuentos-productos {
+    max-width: 1300px;
+    margin: 2rem auto 0 !important;
+}
+.hub__boxed-width.descuentos-productos .banner-text {
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    height: 200px !important;
+} 
+.hub__boxed-width.descuentos-productos .content .banner-text__content {
+    background-color: transparent !important;
+}
+/* / BANNER DESCUENTOS */
 
 /* BANNERS DESCUENTOS */
 .section-category.descuentos .section-category__columns--4item {
@@ -3731,6 +3787,12 @@ main#root-app ol.andes-breadcrumb {
 }
 /* / BANNERS CATEGORÍAS */
 
+/* PRODUCTOS RECOMENDADOS */
+.carousel__container.carousel__container-4.productos-recomendados .carousel__container-body-header-title {
+    text-align: center;
+}
+/* / PRODUCTOS RECOMENDADOS */
+
 /* BANNERS MARCAS */
 .section-category.marcas .section-category__columns--5item {
     grid-template-areas:
@@ -3749,17 +3811,35 @@ main#root-app ol.andes-breadcrumb {
 }
 /* / BANNERS MARCAS */
 
-/* FOOTER */
-/* #ui-ms-automations__main-container {
+/* NEWSLETTER */
+#footer-container, .template-suscription-main-container, 
+.template-suscription-container-legend, .template-suscription-main-container .template-suscription-container {
     background-color: var(--black) !important;
 }
-#ui-ms-automations__container-title {
-    color: var(--white);
-} */
+
+.template-suscription-main-container .template-suscription-container__button {
+    background: var(--white) !important;
+    border-radius: 25px;
+}
+
+.template-suscription-container__description {
+    color: var(--white) !important;
+}
+
+#ui-ms-automations__main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+/* / NEWSLETTER */
+
+/* FOOTER */
+
 /* / FOOTER */
 
 
-@media (min-width: 768px) {
+@media screen and (max-width: 768px) {
     .section-category.marcas .section-category__columns--5item {
         grid-template-areas:
         "ad1 ad2"
@@ -3782,7 +3862,31 @@ main#root-app ol.andes-breadcrumb {
         grid-template-columns: repeat(2,1fr) !important;
         grid-template-rows: 12.75rem 12.75rem 12.75rem 3rem !important;
     }
-    .section-category__columns--5item .section-category-item:nth-child(5) .section-category-item__image {
+    /* .section-category__columns--5item .section-category-item:nth-child(5) .section-category-item__image {
         object-fit: contain !important;
+    } */
+
+    .hub__boxed-width.descuentos-productos .banner-text {
+        background-size: cover !important;
+        height: 285px !important;
+    }
+
+    #formas-pago {
+        margin: auto;
+        text-align: center;
+    }
+
+    #formas-pago ul {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 70px 85px 85px 85px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #nosotros h4, #formas-pago h4, .nav-bounds--contact h4 {
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 1rem;
     }
 }
