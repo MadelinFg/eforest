@@ -3139,7 +3139,8 @@ main#root-app ol.andes-breadcrumb {
         font-size: 12px;
         font-weight: 400;
         line-height: 15px;
-        margin: 5px 0 10px 0
+        margin: 5px 0 10px 0;
+        color: red;
     }
 }
 
@@ -3580,7 +3581,8 @@ main#root-app ol.andes-breadcrumb {
         font-weight: 400;
         height: 48px;
         line-height: 18px;
-        padding-left: 12px
+        padding-left: 12px;
+        border-radius: 30px !important;
     }
 
     .template-suscription-main-container .template-suscription-container .template-suscription-container__email:focus {
@@ -3607,7 +3609,7 @@ main#root-app ol.andes-breadcrumb {
         gap: 10px;
         height: 48px;
         line-height: 15px;
-        margin-bottom: 20px;
+        margin: 20px 40px;
         outline: none;
         position: relative
     }
@@ -3888,5 +3890,9 @@ main#root-app ol.andes-breadcrumb {
         font-size: 20px;
         font-weight: 600;
         margin-top: 1rem;
+    }
+
+    #ui-ms-automations__main-container {
+        flex-direction: column;
     }
 }
