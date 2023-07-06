@@ -401,7 +401,7 @@ body.scrolled header.nav-default-header.header--custom-background {
     height: 100%;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0px;
     position: relative;
     flex-direction: column;
 }
@@ -2727,18 +2727,21 @@ main#root-app ol.andes-breadcrumb {
         display: none !important;
     }
     #desktop-menu .nav-default-list__item:not(.nav-default__hamburger-button) {
-        display: block !important;
+        display: flex !important;
+        padding: 0px 20px;
+        height: 100%;
+        align-items: center;
     }
 
     .nav-default-header {
         box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
-        height: 90px !important;
+        height: 110px !important;
         transition: 0.3s ease;
     }
 
     .nav-default-header__bounds {
-        max-width: 1200px;
-        width: calc(100% - 182px);
+        /* max-width: 1200px; */
+        width: 100%;
     }
 
     .nav-default-header__bounds .nav-default-list {
@@ -3508,7 +3511,7 @@ main#root-app ol.andes-breadcrumb {
     color: var(--white) !important;
     font-size: 24px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0;
     line-height: 32px;
     margin-bottom: 1rem;
     max-width: 490px;
@@ -3537,6 +3540,7 @@ main#root-app ol.andes-breadcrumb {
     margin: 0;
     text-align: left;
     width: 341px;
+    color: white;
 }
 
 .template-suscription-main-container .template-suscription-container__error,
@@ -4246,6 +4250,9 @@ main#root-app ol.andes-breadcrumb {
 #nosotros ul {
     padding: 0;
 }
+#nosotros ul li a {
+    margin-bottom: 10px;
+}
 /* / NOSOTROS */
 
 #nosotros h4,
@@ -4264,13 +4271,30 @@ main#root-app ol.andes-breadcrumb {
     align-items: center;
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 5px;
+    grid-template-rows: repeat(2,50px);
+    column-gap: 5px;
 }
 #formas-pago ul li {
     list-style: none;
 }
 /* / FORMAS DE PAGO */
+
+/* FOOTER */
+#suma-tag {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+#suma-tag h5, 
+#suma-tag a {
+    color: var(--white);
+    font-size: 12px;
+}
+#suma-tag a {
+    text-decoration: underline;
+}
+/* / FOOTER */
+
+
 
 /* CAMBIOS A PLANTILLA */
 
@@ -4278,11 +4302,14 @@ main#root-app ol.andes-breadcrumb {
 *:focus-visible {
     box-shadow: none !important;
 }
-#desktop-menu {
+#desktop-menu-container {
     background-color: var(--white);
     height: 35px;
+}
+#desktop-menu {
+    height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 #desktop-menu .header--custom-text {
@@ -4290,15 +4317,30 @@ main#root-app ol.andes-breadcrumb {
     font-weight: 500;
     font-size: 14px;
 }
+#desktop-menu .nav-default-list__item:hover {
+    background-color: var(--grey);
+}
 #logo-icon-container {
     display: flex; 
     justify-content: center;
+    margin: auto;
 }
-/* /HEADER */
+#nav-search-button .header--custom-svg {
+    fill: var(--black) !important;
+}
+/* / HEADER */
+
+/* MAIN SLIDER */
+.slider .next-button, .slider .prev-button {
+    visibility: visible !important;
+    display: block !important;
+    box-shadow: none !important;
+}
+/* / MAIN SLIDER */
 
 /* BANNER DESCUENTOS */
 .hub__boxed-width.descuentos-productos {
-    max-width: 1300px;
+    max-width: 1185px;
     margin: 2rem auto 0 !important;
 }
 .hub__boxed-width.descuentos-productos .banner-text {
@@ -4309,6 +4351,13 @@ main#root-app ol.andes-breadcrumb {
 .hub__boxed-width.descuentos-productos .content .banner-text__content {
     background-color: transparent !important;
 }
+.hub__boxed-width.descuentos-productos .content .banner-text-img .banner-text,
+.hub__boxed-width.descuentos-productos .content {
+    background-color: transparent !important;
+}
+.hub__boxed-width.descuentos-productos .andes-card--flat {
+    box-shadow: none !important;
+}
 /* / BANNER DESCUENTOS */
 
 /* BANNERS DESCUENTOS */
@@ -4317,6 +4366,9 @@ main#root-app ol.andes-breadcrumb {
 }
 .section-category.descuentos .section-category-item__image {
     object-fit: contain !important;
+}
+.section-category.descuentos .section-category__columns {
+    margin: 0 !important;
 }
 /* / BANNERS DESCUENTOS */
 
@@ -4331,6 +4383,7 @@ main#root-app ol.andes-breadcrumb {
         "ad5 ad5 ad5" !important;
     grid-template-columns: repeat(3, 1fr) !important;
     grid-template-rows: repeat(3, 12.75rem) !important;
+    gap: 5px !important;
 }
 /* / BANNERS CATEGORÍAS */
 
@@ -4338,6 +4391,14 @@ main#root-app ol.andes-breadcrumb {
 .carousel__container.carousel__container-4.productos-recomendados
     .carousel__container-body-header-title {
     text-align: center;
+}
+
+.carousel__container.carousel__container-4.productos-recomendados .carousel__item-foot {
+    display: none !important;
+}
+
+.carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image-4 {
+    height: 100% !important;
 }
 /* / PRODUCTOS RECOMENDADOS */
 
@@ -4348,8 +4409,9 @@ main#root-app ol.andes-breadcrumb {
         "ad1 ad2 ad3 ad4"
         "ad5 ad5 ad5 ad5" !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    grid-template-rows: repeat(2, 12.75rem) !important;
-    gap: 0.5rem !important;
+    grid-template-rows: repeat(2, 13rem) !important;
+    row-gap: 0.5rem !important;
+    column-gap: 0.5rem !important;
 }
 .section-category.marcas .section-category-item__image {
     object-fit: contain !important;
@@ -4358,6 +4420,13 @@ main#root-app ol.andes-breadcrumb {
     margin: 2rem auto 0 !important;
 }
 /* / BANNERS MARCAS */
+
+/* BENEFICIOS */
+.content-list__container.beneficios .content-list__container__3-elements {
+    padding: 0 !important;
+    height: 150px;
+}
+/* / BENEFICIOS */
 
 /* NEWSLETTER */
 #footer-container,
@@ -4380,7 +4449,8 @@ main#root-app ol.andes-breadcrumb {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--white);
 }
 /* / NEWSLETTER */
 
@@ -4389,7 +4459,7 @@ main#root-app ol.andes-breadcrumb {
 /* / FOOTER */
 
 @media screen and (max-width: 768px) {
-    #desktop-menu {
+    #desktop-menu-container {
         display: none;
     }
     .nav-default-header__nav-icons .nav-search-form {
@@ -4447,13 +4517,24 @@ main#root-app ol.andes-breadcrumb {
         grid-template-columns: repeat(2, 1fr) !important;
         grid-template-rows: 12.75rem 12.75rem 12.75rem 3rem !important;
     }
-    /* .section-category__columns--5item .section-category-item:nth-child(5) .section-category-item__image {
-        object-fit: contain !important;
-    } */
 
     .hub__boxed-width.descuentos-productos .banner-text {
         background-size: cover !important;
         height: 285px !important;
+    }
+
+    .content-list__container.beneficios .content-list__container__3-elements {
+        height: 100% !important;
+    }
+
+    .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image .carousel__item-image-background {
+        background: transparent !important;
+    }
+    /* .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image-4 {
+        width: 200px !important;
+    } */
+    .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__container-body-header .carousel__container-body-header-title {
+        font-size: 1rem !important;
     }
 
     #formas-pago {

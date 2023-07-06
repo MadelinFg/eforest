@@ -129,15 +129,17 @@
 
       <!-- Categories -->
       <div>
-        <ul id="desktop-menu">
-          {{#each menu}}
-            <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
-              <a href="{{this.url}}">
-                <span class="header--custom-text">{{this.name}}</span>
-              </a>
-            </li>
-          {{/each}}
-        </ul>
+        <div id="desktop-menu-container">
+          <ul id="desktop-menu">
+            {{#each menu}}
+              <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
+                <a href="{{this.url}}">
+                  <span class="header--custom-text">{{this.name}}</span>
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
 
         <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-list" id="nav-list">
           <li class="nav-default-list__item nav-default__hamburger-button" id="nav-default__hamburger-button">
