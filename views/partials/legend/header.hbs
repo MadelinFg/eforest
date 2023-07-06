@@ -14,9 +14,9 @@
   <header role="banner" class="nav-default-header header--custom-background" itemtype="http://schema.org/Store" itemid="#this" itemscope="">
     <!-- Mobile responsive menu -->
     {{#if logo}}
-      <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-menu-with-image nav-default-sidebar-menu nav-default-responsive-menu header--custom-background" id="responsive-menu">
+    <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-menu-with-image nav-default-sidebar-menu nav-default-responsive-menu header--custom-background" id="responsive-menu">
     {{else}}
-      <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-sidebar-menu nav-default-responsive-menu header--custom-background" id="responsive-menu">
+    <div itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-sidebar-menu nav-default-responsive-menu header--custom-background" id="responsive-menu">
     {{/if}}
 
       <div class="close-sidebar-button">
@@ -44,7 +44,7 @@
         {{#each menu}}
           <li class="nav-default-list--vertical__item">
             <a href="{{this.url}}" class="header--custom-text">{{this.name}}</a>
-            {{#if this.nodes}}
+            {{!-- {{#if this.nodes}}
               <div>
                 <input type="checkbox" data-js="categories-toggle" id="mobile-{{@index}}" name="nav-tools-header__menu-switch">
                 <label for="mobile-{{@index}}" class="toggle-menu">
@@ -52,9 +52,9 @@
                   <span class="nav-header__toggle nav-header__hamburger"></span>
                 </label>
               </div>
-            {{/if}}
+            {{/if}} --}}
           </li>
-          <div class="nav-default-list--vertical__subitem-container" data-toggle="mobile-{{@index}}" >
+          {{!-- <div class="nav-default-list--vertical__subitem-container" data-toggle="mobile-{{@index}}" >
             {{#each this.nodes}}
               <li class="nav-default-list--vertical__subitem">
                 <a href="{{this.url}}" class="header--custom-text">{{this.name}}</a>
@@ -76,8 +76,8 @@
                 {{/each}}
               </div>
             {{/each}}
-          </div>
-          <hr class="nav-default-list--vertical__hr header--custom-border" />
+          </div> --}}
+          <hr class="nav-default-list--vertical__hr header--custom-border" /> 
         {{/each}}
 
         <li class="nav-default-list--vertical__item how-buy__button how-buy-button__mobile" data-js="how-buy__button">
@@ -86,80 +86,81 @@
       </ul>
     </div>
 
+    <!-- Desktop -->
     <div class="nav-default-header__bounds">
-      <!-- Categories -->
-      <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-list" id="nav-list">
-        <li class="nav-default-list__item nav-default__hamburger-button" id="nav-default__hamburger-button">
-          <input type="checkbox" id="mobile-categories-menu-switch" name="nav-tools-header__menu-switch">
-          <label for="mobile-categories-menu-switch" id="hamburguer-menu">
-            <span class="nav-header__hamburger"></span>
-            <span class="nav-header__hamburger"></span>
-            <span class="nav-header__hamburger"></span>
-          </label>
-          {{#if  menu_labels.menu}}
-            <span class="nav-default-header__menu-labels nav-label-menu header--custom-text">{{menu_labels.menu}}</span>
-          {{/if}}
-        </li>
-
-        {{#each menu}}
-          <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
-            <a href="{{this.url}}">
-              <span class="header--custom-text">{{this.name}}</span>
+      <div id="logo-icon-container">
+        <!-- Logo -->
+        <div class="nav-default-header__title">
+          {{#if logo}}
+            <a class="nav-default-header__logo" href="/" id="logo-wrapper">
+              <span class="nav-header__title-hidden">{{shop.name}}</span>
+              <img class="nav-header__image" src="{{logo}}" alt="{{shop.name}}" itemprop="logo" />
             </a>
-          </li>
-        {{/each}}
-
-        {{#if sale.text}}
-          <li class="nav-default-list__item nav-default__sale-link" id="nav-default__sale-link">
-            <a href="{{sale.url}}" class="header--custom-text">{{sale.text}}</a>
-          </li>
-        {{/if}}
-
-        <li class="nav-default-list__item nav-default__see-more" id="nav-default__see-more" has-childs="true">
-          <a class="header--custom-text">
-            <span>{{i18n.moreCategories}}</span>
-          </a>
-        </li>
-      </ul>
-
-
-      <!-- Logo -->
-      <div class="nav-default-header__title">
-        {{#if logo}}
-          <a class="nav-default-header__logo" href="/" id="logo-wrapper">
-            <span class="nav-header__title-hidden">{{shop.name}}</span>
-            <img class="nav-header__image" src="{{logo}}" alt="{{shop.name}}" itemprop="logo" />
-          </a>
-        {{else}}
-          <div class="nav-default-header__shop-name header--custom-title-container">
-            <a class="header--custom-title" href="/" id="logo-wrapper">{{name}}</a>
-          </div>
-        {{/if}}
-      </div>
-
-      <!-- Icons -->
-      <nav class="nav-default-header__nav-icons" id="nav-default-header__nav-icons">
-        <div class="nav-icons-group">
-          <form class="nav-search-form" id="search-form" novalidate="">
-            <input type="text" class="nav-search-input header--custom-border header--custom-text" placeholder="{{i18n.smallPlaceholder}}" id="search-input" required="" autocomplete="off">
-            <button type="submit" class="search-button" id="nav-search-button">
-              {{> legend/views/partials/search}}
-            </button>
-          </form>
-          {{#if  menu_labels.search}}
-            <span class="nav-default-header__menu-labels nav-default-menu-icons header--custom-text">{{menu_labels.search}}</span>
-          {{/if}}
-          {{#if cart}}
-            <a href="{{cart.href}}" title="Carrito" class="cart-button" id="nav-cart">
-              {{> legend/views/partials/cart}}
-              {{> legend/views/partials/cart-badge}}
-            </a>
-          {{/if}}
-          {{#if  menu_labels.cart}}
-            <span class="nav-default-header__menu-labels nav-default-menu-icons header--custom-text">{{menu_labels.cart}}</span>
+          {{else}}
+            <div class="nav-default-header__shop-name header--custom-title-container">
+              <a class="header--custom-title" href="/" id="logo-wrapper">{{name}}</a>
+            </div>
           {{/if}}
         </div>
-      </nav>
+
+        <!-- Icons -->
+        <nav class="nav-default-header__nav-icons" id="nav-default-header__nav-icons">
+          <div class="nav-icons-group">
+            <form class="nav-search-form" id="search-form" novalidate="">
+              <input type="text" class="nav-search-input header--custom-border header--custom-text" placeholder="{{i18n.smallPlaceholder}}" id="search-input" required="" autocomplete="off">
+              <button type="submit" class="search-button" id="nav-search-button">
+                {{> legend/views/partials/search}}
+              </button>
+            </form>
+            {{#if cart}}
+              <a href="{{cart.href}}" title="Carrito" class="cart-button" id="nav-cart">
+                {{> legend/views/partials/cart}}
+                {{> legend/views/partials/cart-badge}}
+              </a>
+            {{/if}}
+            {{#if sale.text}}
+              <li class="nav-default-list__item nav-default__sale-link" id="nav-default__sale-link" style="width: 100px; margin: auto; justify-content: center; text-align: center;">
+                <a href="{{sale.url}}" class="header--custom-text">{{sale.text}}</a>
+              </li>
+            {{/if}}
+          </div>
+        </nav>
+      </div>
+
+      <!-- Categories -->
+      <div>
+        <ul id="desktop-menu">
+          {{#each menu}}
+            <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
+              <a href="{{this.url}}">
+                <span class="header--custom-text">{{this.name}}</span>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+
+        <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-list" id="nav-list">
+          <li class="nav-default-list__item nav-default__hamburger-button" id="nav-default__hamburger-button">
+            <input type="checkbox" id="mobile-categories-menu-switch" name="nav-tools-header__menu-switch">
+            <label for="mobile-categories-menu-switch" id="hamburguer-menu">
+              <span class="nav-header__hamburger"></span>
+              <span class="nav-header__hamburger"></span>
+              <span class="nav-header__hamburger"></span>
+            </label>
+            {{#if  menu_labels.menu}}
+              <span class="nav-default-header__menu-labels nav-label-menu header--custom-text">{{menu_labels.menu}}</span>
+            {{/if}}
+          </li>
+
+          {{#each menu}}
+            <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
+              <a href="{{this.url}}">
+                <span class="header--custom-text">{{this.name}}</span>
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
 
     <!-- Popover -->
