@@ -2735,7 +2735,7 @@ main#root-app ol.andes-breadcrumb {
 
     .nav-default-header {
         box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.4);
-        height: 110px !important;
+        height: 140px !important;
         transition: 0.3s ease;
     }
 
@@ -4304,7 +4304,7 @@ main#root-app ol.andes-breadcrumb {
 }
 #desktop-menu-container {
     background-color: var(--white);
-    height: 35px;
+    height: 48px;
 }
 #desktop-menu {
     height: 100%;
@@ -4321,9 +4321,13 @@ main#root-app ol.andes-breadcrumb {
     background-color: var(--grey);
 }
 #logo-icon-container {
-    display: flex; 
-    justify-content: center;
+    max-width: 1185px;
+    width: 100%;
+    height: 92px;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 }
 #nav-search-button .header--custom-svg {
     fill: var(--black) !important;
@@ -4362,7 +4366,8 @@ main#root-app ol.andes-breadcrumb {
 
 /* BANNERS DESCUENTOS */
 .section-category.descuentos .section-category__columns--4item {
-    grid-template-rows: 26.4375rem !important;
+    grid-template-rows: 26.75rem !important;
+    gap: 5px !important;
 }
 .section-category.descuentos .section-category-item__image {
     object-fit: contain !important;
@@ -4408,10 +4413,11 @@ main#root-app ol.andes-breadcrumb {
         "ad1 ad2 ad3 ad4"
         "ad1 ad2 ad3 ad4"
         "ad5 ad5 ad5 ad5" !important;
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(4, 288px) !important;
     grid-template-rows: repeat(2, 13rem) !important;
-    row-gap: 0.5rem !important;
-    column-gap: 0.5rem !important;
+    row-gap: 4px !important;
+    column-gap: 3px !important;
+    justify-content: center;
 }
 .section-category.marcas .section-category-item__image {
     object-fit: contain !important;
@@ -4420,6 +4426,12 @@ main#root-app ol.andes-breadcrumb {
     margin: 2rem auto 0 !important;
 }
 /* / BANNERS MARCAS */
+
+/* PRODUCTOS RECOMENDADOS */
+.carousel__container.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image .carousel__item-image-background {
+    background: transparent !important;
+}
+/* / PRODUCTOS RECOMENDADOS */
 
 /* BENEFICIOS */
 .content-list__container.beneficios .content-list__container__3-elements {

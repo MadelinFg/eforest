@@ -103,15 +103,19 @@
           {{/if}}
         </div>
 
+        <!-- Buscador -->
+        <div class="nav-default-header__nav-icons">
+          <form class="nav-search-form" id="search-form" novalidate="">
+            <input type="text" class="nav-search-input header--custom-border header--custom-text" placeholder="{{i18n.smallPlaceholder}}" id="search-input" required="" autocomplete="off">
+            <button type="submit" class="search-button" id="nav-search-button">
+              {{> legend/views/partials/search}}
+            </button>
+          </form>
+        </div>
+
         <!-- Icons -->
         <nav class="nav-default-header__nav-icons" id="nav-default-header__nav-icons">
           <div class="nav-icons-group">
-            <form class="nav-search-form" id="search-form" novalidate="">
-              <input type="text" class="nav-search-input header--custom-border header--custom-text" placeholder="{{i18n.smallPlaceholder}}" id="search-input" required="" autocomplete="off">
-              <button type="submit" class="search-button" id="nav-search-button">
-                {{> legend/views/partials/search}}
-              </button>
-            </form>
             {{#if cart}}
               <a href="{{cart.href}}" title="Carrito" class="cart-button" id="nav-cart">
                 {{> legend/views/partials/cart}}
