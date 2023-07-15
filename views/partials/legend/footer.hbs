@@ -68,25 +68,46 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
   $(window).on('load', function () {
+    if (window.screen.width < 900) { //móvil
+      $('.ui-search-layout').removeClass('ui-search-layout--grid');
+      $('.ui-search-layout').addClass('ui-search-layout--stack');
+
+      setTimeout(function () {
+        $('.ui-search-result__image_container').addClass('ui-row-card__image-container');
+        $('.ui-row-card__image-container').removeClass('ui-search-result__image_container');
+        $('.ui-row-card__image-container').removeClass('ui-search-result__image_container--core');
+        $('.ui-row-card__image-container').addClass('ui-row-card__image-container--core');
+      }, 300);
+    } else { //web
+      $('.ui-search-layout').removeClass('ui-search-layout--stack');
+      $('.ui-search-layout').addClass('ui-search-layout--grid');
+    }
+    
     var homeslider = document.getElementsByClassName('slide__image');
     var home = document.getElementsByClassName('home');
 
     if ((homeslider.length > 0) && (home.length > 0)) {
       $(".hub__boxed-width").eq(0).addClass("descuentos-productos");
 
-      $(".carousel__container.carousel__container-4").eq(0).addClass("productos-recomendados");
+      $(".carousel__container.carousel__container-4").eq(0).addClass("descuentos");
+      $(".carousel__container.carousel__container-4").eq(1).addClass("productos-recomendados");
 
-      $(".section-category").eq(0).addClass("descuentos");
-      $(".section-category").eq(1).addClass("categorias");
-      $(".section-category").eq(2).addClass("marcas");
+      $(".section-category").eq(0).addClass("categorias");
+      $(".section-category").eq(1).addClass("marcas");
 
       $(".content-list__container").eq(0).addClass("beneficios");
-
-      //setTimeout(function () {
-        //if (window.screen.width > 900) {
-          //$("#categorias").insertBefore(".slider-principal");
-        //}
-      //}, 600);
     }
   });
+</script>
+
+<!-- Hotjar Tracking Code for eforest -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3268768,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>

@@ -133,18 +133,27 @@
 
       <!-- Categories -->
       <div>
+        <!-- Desktop -->
         <div id="desktop-menu-container">
-          <ul id="desktop-menu">
-            {{#each menu}}
-              <li class="nav-default-list__item" data-js="{{this.name}}-{{@index}}" has-childs={{this.nodes}}>
-                <a href="{{this.url}}">
-                  <span class="header--custom-text">{{this.name}}</span>
-                </a>
-              </li>
-            {{/each}}
+          <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-list nav-list--horizontal header--custom-text header--custom-border" id="desktop-menu">
+              {{#each menu}}
+                  <li class="nav-list__item category category-{{@index}}" itemprop="name" tools-custom-data-emitter="{{@index}}">
+                      <a href="{{this.url}}" class="nav-list__link">{{this.name}}</a>
+                      {{#if this.nodes}}
+                      <ul class="grid-list subcategories-{{@index}}">
+                          {{#each this.nodes}}
+                          <li class="nav-tools-list--vertical__subitem header--custom-text">
+                              <a href="{{this.url}}" class="">{{this.name}}</a>
+                          </li>
+                          {{/each}}
+                      </ul>
+                      {{/if}}
+                  </li>
+              {{/each}}
           </ul>
         </div>
 
+        <!-- Mobile -->
         <ul itemscope itemtype="http://schema.org/SiteNavigationElement" class="nav-default-list" id="nav-list">
           <li class="nav-default-list__item nav-default__hamburger-button" id="nav-default__hamburger-button">
             <input type="checkbox" id="mobile-categories-menu-switch" name="nav-tools-header__menu-switch">
@@ -224,3 +233,23 @@
     </div>
   </header>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  $(window).on('load', function () {
+    let index;
+    $( "li.category" ).mouseenter(function() {
+      index = $(this)[0].classList[2].slice(-1)
+      $(".subcategories-"+index).show()
+    });
+    $( "li.category" ).mouseleave(function() {
+      index = $(this)[0].classList[2].slice(-1)
+      $(".subcategories-"+index).hide()
+    });
+    $( "ul.grid-list" ).mouseleave(function() {
+      index = $(this).parent()[0].classList[2].slice(-1)
+      console.log(index)
+      $(".subcategories-"+index).hide()
+    });
+  });
+</script>

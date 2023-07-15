@@ -19,9 +19,12 @@
           <input type="text" placeholder="{{subscriptionFooter.inputEmailLabel}}"
             class="template-suscription-container__email"
             id="ui-ms-automations__container-input">
-            <button class="template-suscription-container__button" id="ui-ms-automations__container-button">
-            <span class="template-suscription-container__text">{{subscriptionFooter.textButton}}</span>
-          </button>
+            {{!-- <button class="template-suscription-container__button" id="ui-ms-automations__container-button">
+              <span class="template-suscription-container__text">{{subscriptionFooter.textButton}}</span>
+            </button> --}}
+            <a class="template-suscription-container__button" href="https://eforest.us9.list-manage.com/subscribe?u=977bc7e90cbc3ab7f5b4cadf3&id=9b8c0d9d1c">
+              <span class="template-suscription-container__text">{{subscriptionFooter.textButton}}</span>
+            </a>
         </div>
         <div class="template-suscription-container__error" id="ui-ms-automations__error">{{subscriptionFooter.error}}</div>
         <div class="template-suscription-container__error-bad-email" id="ui-ms-automations__error-email">{{subscriptionFooter.errorBadEmail}}</div>
