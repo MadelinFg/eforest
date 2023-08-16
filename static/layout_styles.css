@@ -4325,6 +4325,11 @@ main#root-app ol.andes-breadcrumb {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 15px;
+    cursor: pointer;
+}
+#desktop-menu .category:hover {
+    background-color: var(--grey);
 }
 #desktop-menu .category .grid-list {
     position: absolute;
@@ -4568,11 +4573,18 @@ main#root-app ol.andes-breadcrumb {
     .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image .carousel__item-image-background {
         background: transparent !important;
     }
-    /* .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image-4 {
-        width: 200px !important;
-    } */
+    
     .carousel__container.carousel__container-4.productos-recomendados .carousel__container-body .carousel__container-body-header .carousel__container-body-header-title {
         font-size: 1rem !important;
+    }
+
+    .productos-recomendados.carousel__container,
+    .descuentos.carousel__container {
+        padding: .75rem 0rem 2rem !important;
+    }
+    .productos-recomendados .andes-carousel-snapped--scroll-visible,
+    .descuentos .andes-carousel-snapped--scroll-visible {
+        overflow-x: hidden !important;
     }
 
     #formas-pago {
@@ -4605,5 +4617,9 @@ main#root-app ol.andes-breadcrumb {
     }
     .slider--small .slick-list, .slider--small .slide__image, .slider--small .slide__layer {
         height: 30rem !important;
+    }
+
+    .andes-carousel-snapped__slide img {
+        object-fit: contain !important;
     }
 }
