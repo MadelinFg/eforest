@@ -4501,6 +4501,7 @@ main#root-app ol.andes-breadcrumb {
 
 /* / FOOTER */
 
+
 @media screen and (max-width: 768px) {
     #desktop-menu-container {
         display: none;
@@ -4621,5 +4622,8 @@ main#root-app ol.andes-breadcrumb {
 
     .andes-carousel-snapped__slide img {
         object-fit: contain !important;
+        overflow: hidden;
+        height: 580px !important;
+        object-position: center !important;
     }
 }

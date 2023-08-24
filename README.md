@@ -1,2 +1,1 @@
-# eforest
- 
+# Versión estable
