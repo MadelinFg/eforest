@@ -4467,6 +4467,11 @@ main#root-app ol.andes-breadcrumb {
 .carousel__container.productos-recomendados .carousel__container-body .carousel__item .carousel__item-image .carousel__item-image-background {
     background: transparent !important;
 }
+
+.productos-recomendados .andes-carousel-snapped__slide img,
+.descuentos .andes-carousel-snapped__slide img {
+    height: 100% !important;
+}
 /* / PRODUCTOS RECOMENDADOS Y PRODUCTOS CON DESCUENTO */
 
 /* BENEFICIOS */
