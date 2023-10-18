@@ -79,6 +79,23 @@
           </div> --}}
           <hr class="nav-default-list--vertical__hr header--custom-border" /> 
         {{/each}}
+        
+        <li class="nav-default-list--vertical__item">
+          <a href="/" class="header--custom-text">Marcas</a>
+            <div>
+              <input type="checkbox" data-js="categories-toggle" id="mobile-10" name="nav-tools-header__menu-switch">
+              <label for="mobile-10" class="toggle-menu">
+                <span class="nav-header__toggle nav-header__hamburger"></span>
+                <span class="nav-header__toggle nav-header__hamburger"></span>
+              </label>
+            </div>
+        </li>
+        <div class="nav-default-list--vertical__subitem-container" data-toggle="mobile-10" >
+            <li class="nav-default-list--vertical__subitem">
+              <a href="/_BRAND_16599" class="header--custom-text">AIWA</a>
+            </li>
+        </div>
+        <hr class="nav-default-list--vertical__hr header--custom-border" /> 
 
         <li class="nav-default-list--vertical__item how-buy__button how-buy-button__mobile" data-js="how-buy__button">
           <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
@@ -150,6 +167,47 @@
                       {{/if}}
                   </li>
               {{/each}}
+              <li class="nav-list__item category category-9" tools-custom-data-emitter="9">
+                  <a href="" class="nav-list__link">Marcas</a>
+                  <ul class="grid-list subcategories-9">
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_16599" class="">AIWA</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_7294334" class="">Asus</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_49944" class="">HP</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_448156" class="">Hyperx </a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_17265" class="">JBL</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_16739" class="">LEXAR</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_215" class="">LG</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_15788" class="">Logitech</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_206" class="">Samsung</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_16244" class="">Sandisk</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_9593" class="">WD</a>
+                      </li>
+                      <li class="nav-tools-list--vertical__subitem header--custom-text">
+                          <a href="/_BRAND_59387" class="">XIAOMI</a>
+                      </li>
+                  </ul>
+              </li>
           </ul>
         </div>
 
@@ -241,15 +299,17 @@
     $( "li.category" ).mouseenter(function() {
       index = $(this)[0].classList[2].slice(-1)
       $(".subcategories-"+index).show()
+      console.log('mouseenter:',index)
     });
     $( "li.category" ).mouseleave(function() {
       index = $(this)[0].classList[2].slice(-1)
       $(".subcategories-"+index).hide()
+      console.log('mouseleave:',index)
     });
     $( "ul.grid-list" ).mouseleave(function() {
       index = $(this).parent()[0].classList[2].slice(-1)
-      console.log(index)
       $(".subcategories-"+index).hide()
+      console.log('el otro mouseleave:',index)
     });
   });
 </script>

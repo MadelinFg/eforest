@@ -4338,6 +4338,11 @@ main#root-app ol.andes-breadcrumb {
     width: auto;
     min-width: 180px;
     display: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    min-height: 450px;
+    max-height: 100vh;
 }
 
 #desktop-menu .nav-list__item > .nav-list__link,
